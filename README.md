@@ -37,6 +37,29 @@ Yotube Comment Analytics/
 │       └── consumer.py       # PySpark consumer script for topic classification and toxicity detection
 └── README.md                 # Project documentation
 ```
+---
+## Pipeline Overview
+
+1. **Kafka Producer (`producer.py`)**:
+   - Fetches **YouTube comments** for a given **video ID** using the **YouTube Data API**.
+   - Sends the comments to a **Kafka topic** (`youtube-comments`).
+
+2. **PySpark Consumer (`consumer.py`)**:
+   - Subscribes to the **Kafka topic**.
+   - Performs:
+     - **Topic Classification** using Hugging Face (`facebook/bart-large-mnli`).
+     - **Toxicity Detection** using Hugging Face (`unitary/toxic-bert`).
+     - **Engagement Prediction** (rule-based, based on comment features).
+
+---
+
+## Analysis and AI Components
+
+- **Sentiment Analysis:**  Provides insights into the emotional tone of comments (e.g., positive, neutral, negative).
+- **Toxicity Detection:** Identifies whether a comment contains offensive or harmful language.
+- **Keyword Frequency Analysis: **  Calculates the most frequent keywords or phrases used in the comments to understand trending topics.
+
+This project demonstrates the power of **AI-driven analytics** by combining **real-time streaming** with **natural language processing (NLP)**. The PySpark consumer leverages Hugging Face models to provide insights into the nature of user comments, detecting offensive content, assigning topics, and predicting user engagement.
 
 ---
 
@@ -92,31 +115,6 @@ Yotube Comment Analytics/
    ```bash
    docker logs -f spark_consumer
    ```
-
----
-
-## Pipeline Overview
-
-1. **Kafka Producer (`producer.py`)**:
-   - Fetches **YouTube comments** for a given **video ID** using the **YouTube Data API**.
-   - Sends the comments to a **Kafka topic** (`youtube-comments`).
-
-2. **PySpark Consumer (`consumer.py`)**:
-   - Subscribes to the **Kafka topic**.
-   - Performs:
-     - **Topic Classification** using Hugging Face (`facebook/bart-large-mnli`).
-     - **Toxicity Detection** using Hugging Face (`unitary/toxic-bert`).
-     - **Engagement Prediction** (rule-based, based on comment features).
-
----
-
-## Analysis and AI Components
-
-- **Sentiment Analysis:**  Provides insights into the emotional tone of comments (e.g., positive, neutral, negative).
-- **Toxicity Detection:** Identifies whether a comment contains offensive or harmful language.
-- **Keyword Frequency Analysis: **  Calculates the most frequent keywords or phrases used in the comments to understand trending topics.
-
-This project demonstrates the power of **AI-driven analytics** by combining **real-time streaming** with **natural language processing (NLP)**. The PySpark consumer leverages Hugging Face models to provide insights into the nature of user comments, detecting offensive content, assigning topics, and predicting user engagement.
 
 ---
 
