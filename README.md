@@ -11,17 +11,6 @@ We designed this project to perform **sentiment analysis** and **categorization*
 
 ---
 
-## Table of Contents
-
-1. Project Structure
-2. Setup Instructions
-3. Pipeline Overview
-4. Analysis and AI Components
-5. Future Enhancements
-6. License
-
----
-
 ## Project Structure
 
 ```
