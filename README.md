@@ -112,9 +112,9 @@ Yotube Comment Analytics/
 
 ## Analysis and AI Components
 
-- **Topic Modeling:** Automatically assigns categories to comments (e.g., "technology", "gaming", "sports").
+- **Sentiment Analysis:**  Provides insights into the emotional tone of comments (e.g., positive, neutral, negative).
 - **Toxicity Detection:** Identifies whether a comment contains offensive or harmful language.
-- **Engagement Prediction:** Estimates user interest levels based on comment text patterns (e.g., positivity, questions).
+- **Keyword Frequency Analysis: **  Calculates the most frequent keywords or phrases used in the comments to understand trending topics.
 
 This project demonstrates the power of **AI-driven analytics** by combining **real-time streaming** with **natural language processing (NLP)**. The PySpark consumer leverages Hugging Face models to provide insights into the nature of user comments, detecting offensive content, assigning topics, and predicting user engagement.
 
@@ -129,7 +129,6 @@ This project demonstrates the power of **AI-driven analytics** by combining **re
 
 ---
 
-## License
 
 This project is licensed under the MIT License.
 
